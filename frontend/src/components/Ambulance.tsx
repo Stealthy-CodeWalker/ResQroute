@@ -4,18 +4,20 @@ import Lottie from "lottie-react"
 import axios from "axios";
 
 export default function Ambulance(){
-    let latitude=0,longitude=0;
+    // let latitude=0,longitude=0;
     const [data,setData] = useState("")
     const [ambulances, setAmbulances] = useState(false)
-    const [loading,setLoading] = useState(false)
-    const Loc =() =>{
-        navigator.geolocation.getCurrentPosition(function(position) {
-            latitude = position.coords.latitude
-            longitude = position.coords.longitude
-            console.log("Latitude is :", position.coords.latitude);
-            console.log("Longitude is :", position.coords.longitude);
-        })
-    }
+    const [latitude,setLatitude] = useState(0)
+    const [longitude,setLongitude] = useState(0)
+    // const [loading,setLoading] = useState(false)
+    // const Loc =() =>{
+    //     navigator.geolocation.getCurrentPosition(function(position) {
+    //         latitude = position.coords.latitude
+    //         longitude = position.coords.longitude
+    //         console.log("Latitude is :", position.coords.latitude);
+    //         console.log("Longitude is :", position.coords.longitude);
+    //     })
+    // }
 
     // const loc = JSON.stringify({
     //     "lat": latitude,
@@ -33,25 +35,21 @@ export default function Ambulance(){
     // };
 
     useEffect(()=>{
-        const fetchData = async() =>{
-            setLoading(true);
-            try{
-                // const res = await axios.request(config);
-                const res = await axios.get("http://localhost:3010/",{body:{lat:latitude, long:longitude}})
-                setData((data)=>res.data)
-                console.log(res.data)
-            }
-            catch(error){
-                console.error(error)
-            }
-            setLoading(false);
-            console.log(loading)
-        }
-        fetchData();
-        console.log(data)
-    },[])
+        navigator.geolocation.getCurrentPosition(function(position) {
+            setLatitude(position.coords.latitude)
+            setLongitude(position.coords.longitude) 
+        })
+        axios({
+            method: 'post',
+            url: 'http://localhost:3010/',
+            data: {
+              lat: latitude,
+              long: longitude
+          }
+          });
+    },[ambulances])
     const Open = () =>{
-        Loc()
+        // Loc()
         window.open('./aee.html')
         return(
             <div>

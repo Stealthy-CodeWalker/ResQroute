@@ -12,8 +12,7 @@ const {spawn} = require("child_process")
 
 app.use(express.json())
 
-app.get("/",function(req,res){
-    console.log(req)
+app.post("/",function(req,res){
     const { lat, long } = req.body
     console.log(lat, long)
     const process = spawn('python', ["./test.py", lat,long]);
