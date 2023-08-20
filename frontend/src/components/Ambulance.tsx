@@ -38,7 +38,7 @@ export default function Ambulance(){
             {ambulances &&
                 <div>
                     <h1 className="text-center text-2xl mb-12">
-                        Police have been alerted, they are currently clearing a corridor 🚨
+                        Police have been alerted, they are currently clearing the fastest corridor 🚨
                     </h1>
                     <iframe src="./final.html" width={1366} height={768}></iframe>
                 </div>

@@ -36,8 +36,8 @@ import pandas as pd
 # assign data of lists.
 data = {'LAT': [12.9632, 13.0877, 13.0861, 13.0758, 13.05711, 13.05159, 13.06061, 13.06318, 13.06099],
         'LON': [80.2459, 80.1856, 80.1874, 80.2273, 80.19422, 80.21144, 80.24334, 80.2516, 80.27481],
-        'NAME': ['Apollo Speciality Hospital', 'Frontier Lifeline Hospital', 'madras medical mission coordinates',
-                 'billroth hospitals coordinates', 'JJ Hospital', 'SRM Hospital', 'Apollo Hospital', 'Triplicane Government Hospital', 'CSI Kalyani Hospital']}
+        'NAME': ['Quirk Hospital', 'Bankai Hospital', 'Gumgum medical mission coordinates',
+                 'Hamon hospitals coordinates', 'Stand Hospital', 'JoJo Hospital', 'Uchiha Hospital', 'Sharingan Government Hospital', ' Kalyani` Hospital']}
 
 
 df = pd.DataFrame(data)
