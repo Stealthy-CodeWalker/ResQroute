@@ -14,8 +14,8 @@ app.use(express.json())
 
 app.post("/",function(req,res){
     const { lat, long } = req.body
-    console.log(lat, long)
-    const process = spawn('python', ["./test.py", lat,long]);
+    console.log(lat,long)
+    const process = spawn('python', ["./main.py", lat,long]);
     process.stdout.on('data', (data)=>{
         console.log(`${data}`)
     })
