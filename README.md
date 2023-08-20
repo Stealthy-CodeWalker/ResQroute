@@ -26,4 +26,4 @@ The Res Q Route is a software application designed to provide real-time assistan
 - Souvik Basak
 - Ritveek Rana
 - Aditya Vardhan Agarwal
-- Varun Chindage
+- Varun Chindage
