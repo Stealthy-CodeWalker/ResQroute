@@ -22,16 +22,6 @@ export default function Ambulance(){
           }
           });
     },[latitude,longitude])
-    const Open = () =>{
-        window.open('./final.html')
-        return(
-            <div>
-                    <h1 className="text-xl">
-                        Police have received Emergency Vehicle Alert Request
-                    </h1>
-                </div>
-        )
-    }
     return(
         <div className="flex flex-col items-center text-white bg-cover">
             <h1 className="text-6xl mb-8 tracking-wide font-bold">
